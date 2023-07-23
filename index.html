@@ -34,7 +34,17 @@
 
           </nav>
         </header>
-      
+        <div class="fixed">
+          <div class="title">
+            <h2>populer</h2>
+            <hr >
+          </div>
+            <div class="bot-nav">
+              <img href="#panel-1" class="anchor" src="/images/1.jpg"  alt="">
+              <img href="#panel-1" class="anchor" src="/images/2.jpg" alt="">
+              <img href="#panel-1" class="anchor" src="/images/3.jpg" alt="">
+            </div>
+          </div>
         <main id="content" class="site-content" role="main">
       
           
@@ -61,7 +71,6 @@
                         <a>Explore <i class="fa fa-arrow-right" style="font-size: medium;" aria-hidden="true"></i>
                         </a>
                       </div>
-      
                       <div class="panels-navigation text-right">
                         <div class="nav-panel" data-sign="plus"><a href="#panel-2" class="anchor">Next</a></div>
                       </div>
@@ -143,6 +152,7 @@
                       <a>Explore <i class="fa fa-arrow-right" style="font-size: medium;" aria-hidden="true"></i>
 
                       </div>
+                      
                       <div class="panels-navigation">
                         <div class="nav-panel" data-sign="minus"><a href="#panel-3" class="anchor">Prev</a></div>
                         <div class="nav-panel" data-sign="plus"><a href="#panel-5" class="anchor">Next</a></div>
@@ -170,7 +180,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/PixiPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCRflMyOFSAiHvNtcR7IhpY4a5S-Xb8lm4",
+    authDomain: "travel-1fd78.firebaseapp.com",
+    projectId: "travel-1fd78",
+    storageBucket: "travel-1fd78.appspot.com",
+    messagingSenderId: "35347728466",
+    appId: "1:35347728466:web:ec3bb6cefd3181bc88378b",
+    measurementId: "G-NMQBKTB1M7"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 <script src="scroll.js" ></script>
 
 </body>
