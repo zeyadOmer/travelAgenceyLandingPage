@@ -135,6 +135,46 @@ nav #logo{
     cursor: pointer;
 
 }
+.fixed{
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 9999;
+  bottom: 30%;
+  right: 6vw;
+}
+.bot-nav{
+  position: absolute;
+  margin-top: 2em;
+  height: 200px;
+  width: 700px;
+  overflow: hidden;
+  padding: 2em;
+  display: flex;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  border-radius: 15% ;
+}
+.title{
+  width: 600px;
+    
+  color: #fff;
+}
+.title h2{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.title hr{
+  border: 1px solid;
+  float: right;
+  width: 60%;
+}
+.bot-nav img{
+  width: 30%;
+  border-radius: 15%;
+}
 #panels #panels-container .panel .panels-navigation {
   width: 100%;
   display: -webkit-box;
