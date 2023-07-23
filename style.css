@@ -89,6 +89,13 @@ nav a{
   justify-content: space-evenly;
     
 }
+nav a:hover{
+  text-decoration: underline;
+  font-size: larger;
+  border-bottom: 1px solid #fff;
+}
+nav .anchor:hover{
+}
 nav svg{
   fill: #fff;
   font-size: 1.7rem;
