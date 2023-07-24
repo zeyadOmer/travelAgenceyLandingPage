@@ -181,6 +181,7 @@ nav #logo{
 .bot-nav img{
   width: 30%;
   border-radius: 15%;
+  cursor: pointer;
 }
 #panels #panels-container .panel .panels-navigation {
   width: 100%;
