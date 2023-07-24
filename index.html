@@ -8,12 +8,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="style.css" rel="stylesheet" >
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer:ital@1&family=Milonga&family=Roboto:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
 <title>Travel </title>
+<!-- Firebase JavaScript SDK version 8 (Modular SDK) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
 </head>
 <body>
     <div id="page" class="site">
@@ -63,10 +66,9 @@
                       <div class="desc">
 
                       
-                        <h2 >Dubai </h2>
+                        <h2 id="name" > </h2>
         
-                        <p class="step-description">
-                          Dubai is a city and emirate in the United Arab Emirates known for luxury shopping, ultramodern architecture and a lively nightlife scene. Burj Khalifa, an 830m-tall tower
+                        <p id="desc" class="step-description">
                         </p>
                         <a>Explore <i class="fa fa-arrow-right" style="font-size: medium;" aria-hidden="true"></i>
                         </a>
@@ -180,13 +182,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/PixiPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+<!-- Firebase JavaScript SDK -->
 <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js'
+// Import the functions you need from the SDKs you need
+  
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
@@ -200,8 +200,27 @@
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+
+  // Retrieving data from the "users" collection
+db.collection("city").get()
+  .then(querySnapshot => {
+    querySnapshot.forEach(doc => {
+   // const list =  document.getElementsByClassName('desc') 
+     // console.log(list.length)
+    
+      document.getElementById('name').innerHTML=doc.data().name;
+      document.getElementById('desc').innerHTML=doc.data().descreption;
+
+      //onsole.log(doc.id, " => ", doc.data());
+    });
+  })
+  .catch(error => {
+    console.error("Error getting documents: ", error);
+  });
+
 </script>
 <script src="scroll.js" ></script>
 
